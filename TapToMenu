@@ -1,0 +1,52 @@
+
+import UIKit
+
+class ViewController: UIViewController {
+
+    
+    @IBOutlet weak var goButton: UIButton!
+    
+    @IBAction func goButtonAction(_ sender: Any) {
+        
+        
+        let alertController = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
+        
+        // Create the actions.
+        let destructiveAction = UIAlertAction(title: "Open Camera", style: .destructive) { _ in
+            NSLog("Open Camera")
+        }
+        
+        let otherAction = UIAlertAction(title: "Open Photo Library", style: .default) { _ in
+            NSLog("Open LIbrary")
+        }
+        
+        let testAction = UIAlertAction(title: "Cancel", style: .default){ _ in
+            NSLog("Cancel")
+        }
+        
+        // Add the actions.
+        alertController.addAction(destructiveAction)
+        alertController.addAction(otherAction)
+        alertController.addAction(testAction)
+        
+        present(alertController, animated: true, completion: nil)
+    }
+    
+    
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        // Do any additional setup after loading the view, typically from a nib.
+    }
+
+   
+    
+    
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
+    }
+
+
+}
+
